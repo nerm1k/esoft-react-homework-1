@@ -1,0 +1,29 @@
+@import '../mixins';
+
+
+.competence-card{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    @include border-radius(10px);
+    @include transition(0.15s, ease-in);
+    &:hover{
+        background-color: rgba(238, 238, 238, 0.24);
+        border: 1px solid rgb(197, 197, 197);
+    }
+    &__image{
+        width: 40%;
+    }
+    &__title{
+        font-size: 30px;
+    }
+    &__description{
+        font-size: 18px;
+        line-height: 24px;
+        text-align: justify;
+    }
+}

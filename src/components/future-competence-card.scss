@@ -1,0 +1,35 @@
+@import '../mixins';
+
+
+.future-competence-card{
+    width: 49%;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid rgb(179, 179, 179);
+    @include border-radius(10px);
+    @include transition(0.2s, ease-in);
+    box-shadow: 0px 0px 6px 0px rgba(190, 190, 190, 0.75);
+    &:hover{
+        border-color: $mainBlue;
+        @include transform(scale(1.01));
+    }
+    &__image{
+        padding: 20px;
+    }
+    &__info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 20px 0 20px;
+        gap: 15px;
+        &__title{
+            font-size: 28px;
+        }
+        &__description{
+            line-height: 22px;
+            text-align: justify;
+        }
+    }
+}
