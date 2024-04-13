@@ -1,5 +1,6 @@
-import React from "react";
-import { FutureCompetenceCard } from "./FutureCompetenceCard";
+import React, {useState} from "react";
+import { FutureCompetenceCard } from "../FutureCompetenceCard/FutureCompetenceCard";
+import { Button } from "../Button/Button";
 import './future-competence-list.scss';
 
 const futureCompetenciesArray = [{
@@ -46,12 +47,24 @@ const futureCompetenciesArray = [{
 }]
 
 export function FutureCompetenceList(){
+    const [isShown, setIsShown] = useState(true);
+
+    function changeIsShown(){
+        setIsShown(prev => !prev);
+    }
+
     return(
         <div className="future-competencies">
-            <p>Компетенции, которые я бы хотел изучить</p>
-            <div className="future-competencies__container">
-                {futureCompetenciesArray.map(futureCompetence => {
-                    return <FutureCompetenceCard title={futureCompetence.title} imgSrc={futureCompetence.imgSrc}>{futureCompetence.description}</FutureCompetenceCard>
+            <div className="future-competencies__header">
+                <div></div>
+                <p>Компетенции, которые я бы хотел изучить</p>
+                <Button onClick={changeIsShown}>
+                    {isShown ? "Скрыть" : "Показать"}
+                </Button>
+            </div>
+            <div className={isShown ? "future-competencies__container" : "future-competencies__container hidden"}>
+                {futureCompetenciesArray.map((futureCompetence, i) => {
+                    return <FutureCompetenceCard key={i} title={futureCompetence.title} imgSrc={futureCompetence.imgSrc}>{futureCompetence.description}</FutureCompetenceCard>
                 })}
             </div>
         </div>
