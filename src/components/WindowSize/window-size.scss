@@ -1,0 +1,12 @@
+@import '../mixins';
+
+.current-window-size{
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    padding: 4px;
+    font-size: 12px;
+    background: rgba(224, 138, 154, 0.377);
+    border: 1px solid black;
+    @include border-radius(8px);
+}
