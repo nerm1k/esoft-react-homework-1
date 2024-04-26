@@ -1,0 +1,29 @@
+@import '../mixins';
+
+button{
+    position: relative;
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid #d3d3d3;
+    overflow: hidden;
+    z-index: 0;
+    @include border-radius(5px);
+    @include transition(0.25s);
+    &:hover{
+        color: #fff;
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: -100%;
+        background-color: $mainBlue;
+        z-index: -1;
+        @include transition(0.25s);
+    }
+    &:hover::before{
+        left: 0;
+    }
+}

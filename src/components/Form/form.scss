@@ -1,0 +1,32 @@
+@import '../mixins';
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    background-color: #fff;
+    padding: 40px;
+    @include border-radius(10px);
+    box-shadow: 5px 6px 29px 0px rgba(0,0,0,0.29);
+    p{
+        font-size: 32px;
+    }
+    label{
+        margin-top: 20px;
+        font-size: 18px;
+    }
+    input[type=text], input[type=number], textarea{
+        margin-top: 5px;
+        padding: 8px 12px;
+        font-size: 18px;
+        border: 1px solid #ccc;
+        @include border-radius(6px);
+    }
+    textarea{
+        min-height: 80px;
+        resize:vertical;
+    }
+    button{
+        margin-top: 16px;
+    }
+}

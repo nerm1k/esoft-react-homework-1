@@ -15,11 +15,25 @@
         background-color: rgba(238, 238, 238, 0.24);
         border: 1px solid rgb(197, 197, 197);
     }
+    &--outer{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        button{
+            width: 30%;
+        }
+    }
     &__image{
         width: 40%;
     }
     &__title{
         font-size: 30px;
+        font-weight: 500;
+    }
+    &__skill{
+        align-self: flex-start;
+        font-size: 20px;
     }
     &__description{
         font-size: 18px;
