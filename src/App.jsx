@@ -3,6 +3,9 @@ import { ProfileCard } from "./components/ProfileCard/ProfileCard";
 import { CompetenceList } from "./components/CompetenceList/CompetenceList";
 import { FutureCompetenceList } from "./components/FutureCompetenceList/FutureCompetenceList";
 import { Form } from "./components/Form/Form";
+import { CountdownTimer } from "./components/CountdownTimer/CountdownTimer";
+import { UserList } from "./components/UserList/UserList";
+import { WindowSize } from "./components/WindowSize/WindowSize";
 
 const competenciesArray = [{
   href: 'https://learn.javascript.ru/',
@@ -42,7 +45,10 @@ function App() {
 
   return (
     <>
+        <WindowSize />
         <ProfileCard />
+        <CountdownTimer />
+        <UserList />
         <CompetenceList competenciesArray={competencies} handleEdit={setCompetencies}/>
         <Form addCompetency={addCompetency}/>
         <FutureCompetenceList />
